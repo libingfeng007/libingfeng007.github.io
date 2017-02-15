@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>学习笔记－OC基础 - 赖皮小新</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;本文是本人学习OC一段时间后，对OC入门基础进行的一个知识性整理，一方面巩固自己的知识网络体系，一方面希望能给同样接触OC不久的朋友们带来一些知识梳理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记－OC基础">
+<meta property="og:url" content="http://yoursite.com/2016/03/03/object-c-foundation/index.html">
+<meta property="og:site_name" content="赖皮小新">
+<meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;本文是本人学习OC一段时间后，对OC入门基础进行的一个知识性整理，一方面巩固自己的知识网络体系，一方面希望能给同样接触OC不久的朋友们带来一些知识梳理。">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/object-c-foundation/class.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/object-c-foundation/class-inherit.png">
+<meta property="og:updated_time" content="2016-04-02T04:57:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习笔记－OC基础">
+<meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;本文是本人学习OC一段时间后，对OC入门基础进行的一个知识性整理，一方面巩固自己的知识网络体系，一方面希望能给同样接触OC不久的朋友们带来一些知识梳理。">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/object-c-foundation/class.png">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-object-c-foundation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习笔记－OC基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/03/03/object-c-foundation/" class="article-date">
+  <time datetime="2016-03-03T06:42:11.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;本文是本人学习OC一段时间后，对OC入门基础进行的一个知识性整理，一方面巩固自己的知识网络体系，一方面希望能给同样接触OC不久的朋友们带来一些知识梳理。</p>
+<a id="more"></a>
+<h2 id="我是大纲："><a href="#我是大纲：" class="headerlink" title="我是大纲："></a><strong>我是大纲：</strong></h2><ol>
+<li>类(Class)<ul>
+<li>1.1 类的定义与实现</li>
+<li>1.2 类的继承</li>
+</ul>
+</li>
+<li>变量(Variable)<ul>
+<li>2.1 局部变量与全局变量</li>
+<li>2.2 静态变量Static</li>
+<li>2.3 const关键字</li>
+</ul>
+</li>
+<li>属性(Property)<ul>
+<li>3.1 属性点定义</li>
+<li>3.2 公共属性与专有属性</li>
+<li>3.3 属性关键字</li>
+</ul>
+</li>
+<li>对象(Object)<ul>
+<li>4.1 对象的创建</li>
+<li>4.2 对象的操作</li>
+</ul>
+</li>
+<li>方法(Method)<ul>
+<li>5.1 方法的定义</li>
+<li>5.2 方法的调用</li>
+<li>5.3 方法的重写</li>
+</ul>
+</li>
+<li>基本运算与对象操作<ul>
+<li>6.1 常量与数据类型</li>
+<li>6.2 算术表达式</li>
+<li>6.3 选择结构</li>
+<li>6.4 循环结构</li>
+</ul>
+</li>
+<li>Foudation框架<ul>
+<li>7.1 NSString、NSMutableString</li>
+<li>7.2 NSArray、NSMutableArray</li>
+<li>7.3 NSDictionary、NSMutableDictionary</li>
+<li>7.4 NSNumber</li>
+<li>7.5 NSDate</li>
+<li>7.6 调试利器 - NSLog</li>
+</ul>
+</li>
+<li>Object-C特性<ul>
+<li>8.1 Block介绍</li>
+<li>8.2 协议(protocol)</li>
+<li>8.3 分类(Category)</li>
+<li>8.4 代理(delegate)</li>
+</ul>
+</li>
+<li>高级知识点<ul>
+<li>9.1 对象复制</li>
+<li>9.2 单例(Singleton)</li>
+<li>9.3 MVC设计模式</li>
+</ul>
+</li>
+</ol>
+<h3 id="一、类-Class"><a href="#一、类-Class" class="headerlink" title="一、类(Class)"></a><strong>一、类(Class)</strong></h3><blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Object-C为每个类都创建了两个文件，分别为.h(头文件)和.m(实现文件)。一般情况下，.h文件中声明属性和方法。在.m文件中实现在.h文件中声明的方法。有时候为了隐藏实现功能的细节，可以不在.h文件中声明方法或属性，直接在.m文件中实现所需功能，这体现了面向对象的封装特性。</p>
+</blockquote>
+<h4 id="1-1-类的定义与实现"><a href="#1-1-类的定义与实现" class="headerlink" title="1.1 类的定义与实现"></a><strong>1.1 类的定义与实现</strong></h4><p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;当我们使用Xcode创建一个类的时候，可以使用快捷键<code>Command + N</code>,Xcode会自动创建.h和.m两个文件</p>
+<p><img src="/assets/blogImg/object-c-foundation/class.png" alt="class"></p>
+<h4 id="1-2-类的继承"><a href="#1-2-类的继承" class="headerlink" title="1.2 类的继承"></a><strong>1.2 类的继承</strong></h4><p>类的继承主要有两种方式：</p>
+<ul>
+<li><p>在Xcode中，依次点击File -&gt; New -&gt; File -&gt; Cocoa Touch Class，即可新增类，在Subclass of中输入或者选择新增类的父类，如下图所示：新增的类是NSObject类的子类。<br><img src="/assets/blogImg/object-c-foundation/class-inherit.png" alt="class-inherit"></p>
+</li>
+<li><p>直接通过代码来实现继承(ClassOne继承自ClassTwo)</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@interface ClassOne : ClassTwo</div></pre></td></tr></table></figure>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;被继承的类称为父类（基类、超类），继承的类称为子类。子类拥有父类所有的方法和属性(除了私有的)，所以在继承后的子类可以使用从父类继承而来的方法和属性</p>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS开发/">IOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OC/">OC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/18/meitu-competing-goods-analyse/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          美图产品报告
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/21/carrier-update-profile/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iPhone 6/6s 正式支持4G高清语音通话，鸡肋 or 改变？&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Mileson&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

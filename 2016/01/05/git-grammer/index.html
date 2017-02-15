@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>十分钟了解Git - 赖皮小新</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git是什么
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;  Git是目前世界上最先进的分布式版本控制系统，第一个版本是Linux之父，Linux Torvalds亲手操刀设计和实现的，感觉牛逼哄哄的，相比SVN，CVS，最大的特点也是优点在于提供分布式的代码管理。就目前来看，Git更完善，而且Github开源社区的氛围也是十分友好的，说了这么多，赶紧开始认">
+<meta property="og:type" content="article">
+<meta property="og:title" content="十分钟了解Git">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/git-grammer/index.html">
+<meta property="og:site_name" content="赖皮小新">
+<meta property="og:description" content="Git是什么
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;  Git是目前世界上最先进的分布式版本控制系统，第一个版本是Linux之父，Linux Torvalds亲手操刀设计和实现的，感觉牛逼哄哄的，相比SVN，CVS，最大的特点也是优点在于提供分布式的代码管理。就目前来看，Git更完善，而且Github开源社区的氛围也是十分友好的，说了这么多，赶紧开始认">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/git-grammer/head.png">
+<meta property="og:updated_time" content="2016-05-22T03:32:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="十分钟了解Git">
+<meta name="twitter:description" content="Git是什么
+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;  Git是目前世界上最先进的分布式版本控制系统，第一个版本是Linux之父，Linux Torvalds亲手操刀设计和实现的，感觉牛逼哄哄的，相比SVN，CVS，最大的特点也是优点在于提供分布式的代码管理。就目前来看，Git更完善，而且Github开源社区的氛围也是十分友好的，说了这么多，赶紧开始认">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/git-grammer/head.png">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-git-grammer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      十分钟了解Git
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/05/git-grammer/" class="article-date">
+  <time datetime="2016-01-05T05:20:05.000Z" itemprop="datePublished">2016-01-05</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a><strong>Git是什么</strong></h2><blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;  Git是目前世界上最先进的分布式版本控制系统，第一个版本是Linux之父，Linux Torvalds亲手操刀设计和实现的，感觉牛逼哄哄的，相比SVN，CVS，最大的特点也是优点在于提供分布式的代码管理。就目前来看，Git更完善，而且Github开源社区的氛围也是十分友好的，说了这么多，赶紧开始认识这门新语言吧，你一定会爱上它的！</p>
+</blockquote>
+<a id="more"></a>
+<p><img src="/assets/blogImg/git-grammer/head.png" alt="head"></p>
+<h2 id="我是大纲："><a href="#我是大纲：" class="headerlink" title="我是大纲："></a><strong>我是大纲</strong>：</h2><ol>
+<li>为什么是Git</li>
+<li>安装Git</li>
+<li>本地Git基本配置</li>
+<li>Git的基本使用方式<ul>
+<li>4.1 Command Line</li>
+<li>4.2 Source Tree</li>
+</ul>
+</li>
+<li>Git命令<ul>
+<li>5.1 基础命令</li>
+<li>5.2分支管理</li>
+</ul>
+</li>
+</ol>
+<h3 id="一、为什么是Git"><a href="#一、为什么是Git" class="headerlink" title="一、为什么是Git"></a><strong>一、为什么是Git</strong></h3><ul>
+<li>分支代码只有一份</li>
+</ul>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;使用过svn的童鞋想必都知道，当我们要开发一个新功能或者增加一个新版本或者修改一个复杂bug的时候，通常都需要copy整份代码到本地一个目录，然后添加到svn服务器上进行代码管理。而Git不同，Git可以创建许多branches，每个branch都是独立的，当我们需要修改代码的时候，commit也只是对本地仓库的修改。如果使用SourceTree我们会发现在工具栏的Git Flow功能，已经很好的为此做了准备。</p>
+</blockquote>
+<ul>
+<li>log在本地</li>
+</ul>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;svn的log都是存储在服务器上的，当我们要查阅修改记录的时候，必须要能够连接上远程服务器，并且需要具有权限。而Git不同，Git对于本地仓库的修改记录都是在本地上的，方便查阅。</p>
+</blockquote>
+<ul>
+<li>更加安全</li>
+</ul>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;因为Git支持本地无限分支(Branches)，当我们个体在本地创建多个branches用于不同目的的时候（修改，新增，探索），合并一份代码显然要比svn合并一堆工程copy更加简单、明了。</p>
+</blockquote>
+<ul>
+<li>提交代码更加安全</li>
+</ul>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;Git的commit命令不同于SVN，commit只是对本地仓库代码的一次更新。当需要提交到master远程仓库，或者其他远程分支仓库的时候，需要使用push功能。虽然增加了一个过程，却可以防止随意修改导致后期合并出现大问题的风险，而SVN是直接提交上去的，这有可能导致操作失误。</p>
+</blockquote>
+<ul>
+<li>目录更加简洁</li>
+</ul>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;在本地的Git仓库根目录中，一个<code>.git</code>包涵了所有的管理信息，而用过SVN的，想必都被每个子目录下的<code>.svn</code>所恶心过吧。当你需要修改文件冲突的时候，你就知道有多痛苦了，所以，一个文件肯定简单。</p>
+</blockquote>
+<h3 id="二、安装Git"><a href="#二、安装Git" class="headerlink" title="二、安装Git"></a><strong>二、安装Git</strong></h3><p>(windows系统)</p>
+<blockquote>
+<p>参考教程: <a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">教程地址</a></p>
+</blockquote>
+<p>(Mac OS系统)<br>打开终端窗口, 依次粘贴以下脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install git</div></pre></td></tr></table></figure>
+<h3 id="三、本地Git基本配置"><a href="#三、本地Git基本配置" class="headerlink" title="三、本地Git基本配置"></a><strong>三、本地Git基本配置</strong></h3><ul>
+<li><p>打开Git Bash命令行工具(Mac用户请打开终端工具):</p>
+</li>
+<li><p>创建一个全局用户名：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"User_Name"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>创建一个全局邮箱：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.email <span class="string">"User_Name@example.com"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果不想每次连接远程仓库都输入密码的话，输入如下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global credential.helper osxkeychain</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="四、Git的基本使用方式"><a href="#四、Git的基本使用方式" class="headerlink" title="四、Git的基本使用方式"></a><strong>四、Git的基本使用方式</strong></h3><ul>
+<li><strong>4.1 Command Line</strong></li>
+</ul>
+<blockquote>
+<p>使用终端的命令行时，首先我们要有一定的linux命令行知识。实际当中经常用到的比较少，这里只介<br>绍一些必要的。<br><a href="http://www.renfei.org/blog/mac-os-x-terminal-101.html" target="_blank" rel="external">参考链接</a></p>
+</blockquote>
+<p><code>Linux基础命令</code></p>
+<table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sudo -s</td>
+<td style="text-align:center">获取绝对用户权限</td>
+</tr>
+<tr>
+<td>cd xxx</td>
+<td style="text-align:center">进入xxx目录</td>
+</tr>
+<tr>
+<td>ls (-a/-A)</td>
+<td style="text-align:center">显示当前路径下所有文件(隐藏的)</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td style="text-align:center">显示当前绝对路径</td>
+</tr>
+<tr>
+<td>mkdir  xxx</td>
+<td style="text-align:center">创建文件夹xxx</td>
+</tr>
+<tr>
+<td>rm  -rf xxx</td>
+<td style="text-align:center">删除文件夹xxx</td>
+</tr>
+<tr>
+<td>man xxx</td>
+<td style="text-align:center">查看xxx命令手册</td>
+</tr>
+</tbody>
+</table>
+<p>基本使用流程：</p>
+<p>从初始化到提交本地代码到远程Github仓库:</p>
+<blockquote>
+<ul>
+<li>初始化本地git仓库(<strong>git init</strong>)—&gt;在目录下进行操作(<strong>增加、删除、修改</strong>)——-&gt;</li>
+<li>添加当前目录下文件至本地缓存区(<strong>git add xxx[如果XXX为<code>.</code>则代表目录下全部文件]</strong>)——-&gt;</li>
+<li>提交本地缓存区中的所有文件和Log文件到本地仓库版本中，并添加描述(<strong>git commit -m “xxxx”</strong>)——-&gt;</li>
+<li>设置要提交到的远程仓库地址并取个别名(设置一次就好了)(<strong>git remote add origin <code>http://git.oschina.net/xxx/xxx.git</code>[这里的远程仓库的别名为origin]</strong>)</li>
+<li>提交xxx和log，到远程仓库origin的YYY分支下(<strong>git push  origin YYY[一般为<code>master</code> 分支]</strong>)</li>
+</ul>
+</blockquote>
+<p>从远程仓库到提交代码到提交代码到远程Github仓库:</p>
+<blockquote>
+<ul>
+<li>拉取远程仓库到本地(<strong>git clone <code>https://github.com/XXX/XXX.git</code>[地址为仓库到HTTPS地址]</strong>)——-&gt;</li>
+<li>在目录下进行操作(<strong>增加、删除、修改</strong>)——-&gt;<br>添加当前目录下文件至本地缓存区(<strong>git add xxx[如果XXX为<code>.</code>则代表目录下全部文件]</strong>)——-&gt;</li>
+<li>提交本地缓存区中的所有文件和Log文件到本地仓库版本中，并添加描述(<strong>git commit -m “xxxx”</strong>)——-&gt;</li>
+<li>提交xxx和本地log，到远程仓库origin的YYY分支下(<strong>git push  origin YYY[一般为<code>master</code> 分支]</strong>)</li>
+</ul>
+</blockquote>
+<p>⚠️，本地初始化的本地Git仓库和远程拉取到本地的Git仓库的最大区别在于，远程的Git仓库在拉取到本地过程中已经自动生成了和远程仓库的<code>.git</code>文件，所以不需要再进行<code>git remote add origin http://git.oschina.net/xxx/xxx.git</code>操作。</p>
+<ul>
+<li><strong>4.2 Source Tree[和svn类似]</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li>添加文件到索引(<strong><code>git add</code></strong>)——-&gt;</li>
+<li>提交到本地仓库(<strong><code>git commit</code></strong>)——-&gt;</li>
+<li>上传到远程仓库(<strong><code>git push</code></strong>)<br>之后就是对仓库中文件的增加修改删除操作了，⚠️记得如果不是单独另需创建的branch，每次对本地仓库操作的时候都要使用 git pull命令，更新远程仓库到本地中，防止冲突。这点和SVN的update类似</li>
+</ul>
+</blockquote>
+<h3 id="五、Git命令"><a href="#五、Git命令" class="headerlink" title="五、Git命令"></a><strong>五、Git命令</strong></h3><h4 id="5-1-基础命令"><a href="#5-1-基础命令" class="headerlink" title="5.1 基础命令"></a><strong>5.1 基础命令</strong></h4><ul>
+<li>在当前目录建立git仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
+<ul>
+<li>添加当前目录下文件至本地缓存区</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add xxx[如果XXX为`.`则代表目录下全部文件]</div></pre></td></tr></table></figure>
+<ul>
+<li>提交本地缓存区中的所有文件和Log文件到本地仓库版本中，并添加描述</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"xxxx"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>设置要提交到的远程仓库地址并取个别名(设置一次就好了)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin http://git.oschina.net/xxx/xxx.git[origin为远程仓库到别名]</div></pre></td></tr></table></figure>
+<ul>
+<li>移除远程仓库链接，方便进行更换远程仓库链接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote rm origin[origin为远程仓库到别名]</div></pre></td></tr></table></figure>
+<ul>
+<li>提交xxx和本地log，到远程仓库origin的YYY分支下*</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push  origin YYY[一般为master分支]</div></pre></td></tr></table></figure>
+<h4 id="5-2-分支管理"><a href="#5-2-分支管理" class="headerlink" title="5.2 分支管理"></a><strong>5.2 分支管理</strong></h4><p>Git鼓励使用分支，即创建一个分支做一件事之后与master分支合并，然后删掉这个分支，虽然有些麻烦，但更安全</p>
+<ul>
+<li>查看分支情况</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch</div></pre></td></tr></table></figure>
+<ul>
+<li>创建分支</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch [name]</div></pre></td></tr></table></figure>
+<ul>
+<li><p>切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout [name]</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建+切换分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b [name]</div></pre></td></tr></table></figure>
+</li>
+<li><p>合并某分支到当前分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge [name]</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch <span class="_">-d</span> [name]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/07/book-how-to-talk/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          拯救你情商的一剂良药
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/04/markdown-grammer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">十分钟上手Markdown&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Mileson&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

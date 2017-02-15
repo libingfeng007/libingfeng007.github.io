@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>IOS开发－实现应用内各种设置界面的跳转 - 赖皮小新</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;开发中偶尔会有需要从应用跳转到系统设置界面的需求，例如在没网的状态下提醒他拥护去设置界面连接Wi-Fi。在摸索之后，发现实现起来其实挺简单的，我们一起来看看是如何实现的吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IOS开发－实现应用内各种设置界面的跳转">
+<meta property="og:url" content="http://yoursite.com/2016/01/11/ios-how-to-system-interface/index.html">
+<meta property="og:site_name" content="赖皮小新">
+<meta property="og:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;开发中偶尔会有需要从应用跳转到系统设置界面的需求，例如在没网的状态下提醒他拥护去设置界面连接Wi-Fi。在摸索之后，发现实现起来其实挺简单的，我们一起来看看是如何实现的吧">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/ios-how-to-system-interface/head.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/ios-how-to-system-interface/info_plist_config.png">
+<meta property="og:updated_time" content="2016-05-22T03:27:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IOS开发－实现应用内各种设置界面的跳转">
+<meta name="twitter:description" content="&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;开发中偶尔会有需要从应用跳转到系统设置界面的需求，例如在没网的状态下提醒他拥护去设置界面连接Wi-Fi。在摸索之后，发现实现起来其实挺简单的，我们一起来看看是如何实现的吧">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/ios-how-to-system-interface/head.png">
+  
+  
+  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-ios-how-to-system-interface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IOS开发－实现应用内各种设置界面的跳转
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/01/11/ios-how-to-system-interface/" class="article-date">
+  <time datetime="2016-01-11T04:30:29.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;开发中偶尔会有需要从应用跳转到系统设置界面的需求，例如在没网的状态下提醒他拥护去设置界面连接Wi-Fi。在摸索之后，发现实现起来其实挺简单的，我们一起来看看是如何实现的吧</p>
+<a id="more"></a>
+<p><img src="/assets/blogImg/ios-how-to-system-interface/head.png" alt="head"></p>
+<h2 id="我是大纲："><a href="#我是大纲：" class="headerlink" title="我是大纲："></a><strong>我是大纲：</strong></h2><ol>
+<li>配置文件设置</li>
+<li>基本格式</li>
+<li>参数查阅列表</li>
+</ol>
+<h3 id="一、配置文件设置"><a href="#一、配置文件设置" class="headerlink" title="一、配置文件设置"></a><strong>一、配置文件设置</strong></h3><p>在项目中的info.plist中添加 URL types 并设置一项URL Schemes为prefs，如下图：</p>
+<p><img src="/assets/blogImg/ios-how-to-system-interface/info_plist_config.png" alt="info_plist_config"></p>
+<h3 id="二、基本格式"><a href="#二、基本格式" class="headerlink" title="二、基本格式"></a><strong>二、基本格式</strong></h3><blockquote>
+<p>NSURL *url = [NSURL URLWithString:@”prefs:XXX”];          //XXX为指定界面的参数<br>if ([[UIApplication sharedApplication] canOpenURL:url])<br>{<br>   [[UIApplication sharedApplication] openURL:url];<br>}</p>
+</blockquote>
+<h3 id="三、参数查阅列表"><a href="#三、参数查阅列表" class="headerlink" title="三、参数查阅列表"></a><strong>三、参数查阅列表</strong></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">About — prefs:root=General&amp;path=About</div><div class="line">Accessibility — prefs:root=General&amp;path=ACCESSIBILITY</div><div class="line">Airplane Mode On — prefs:root=AIRPLANE_MODE</div><div class="line">Auto-Lock — prefs:root=General&amp;path=AUTOLOCK</div><div class="line">Brightness — prefs:root=Brightness</div><div class="line">Bluetooth — prefs:root=General&amp;path=Bluetooth</div><div class="line">Date &amp; Time — prefs:root=General&amp;path=DATE_AND_TIME</div><div class="line">FaceTime — prefs:root=FACETIME</div><div class="line">General — prefs:root=General</div><div class="line">Keyboard — prefs:root=General&amp;path=Keyboard</div><div class="line">iCloud — prefs:root=CASTLE</div><div class="line">iCloud Storage &amp; Backup — prefs:root=CASTLE&amp;path=STORAGE_AND_BACKUP</div><div class="line">International — prefs:root=General&amp;path=INTERNATIONAL</div><div class="line">Location Services — prefs:root=LOCATION_SERVICES</div><div class="line">Music — prefs:root=MUSIC</div><div class="line">Music Equalizer — prefs:root=MUSIC&amp;path=EQ</div><div class="line">Music Volume Limit — prefs:root=MUSIC&amp;path=VolumeLimit</div><div class="line">Network — prefs:root=General&amp;path=Network</div><div class="line">Nike + iPod — prefs:root=NIKE_PLUS_IPOD</div><div class="line">Notes — prefs:root=NOTES</div><div class="line">Notification — prefs:root=NOTIFICATIONS_ID</div><div class="line">Phone — prefs:root=Phone</div><div class="line">Photos — prefs:root=Photos</div><div class="line">Profile — prefs:root=General&amp;path=ManagedConfigurationList</div><div class="line">Reset — prefs:root=General&amp;path=Reset</div><div class="line">Safari — prefs:root=Safari</div><div class="line">Siri — prefs:root=General&amp;path=Assistant</div><div class="line">Sounds — prefs:root=Sounds</div><div class="line">Software Update — prefs:root=General&amp;path=SOFTWARE_UPDATE_LINK</div><div class="line">Store — prefs:root=STORE</div><div class="line">Twitter — prefs:root=TWITTER</div><div class="line">Usage — prefs:root=General&amp;path=USAGE</div><div class="line">VPN — prefs:root=General&amp;path=Network/VPN</div><div class="line">Wallpaper — prefs:root=Wallpaper</div><div class="line">Wi-Fi — prefs:root=WIFI</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+      <footer class="article-footer">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS开发/">IOS开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OC/">OC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
+
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/13/ios-how-to-save-photo-to-album/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          IOS开发－长按保存图片到系统相册
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/07/book-how-to-talk/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">拯救你情商的一剂良药&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Mileson&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -5,15 +5,41 @@
   
   <title>打造属于你的独立博客帝国 - 赖皮小新</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="前置条件
+
+有时间和耐心折腾
+一定的学习能力和专研精神">
+<meta property="og:type" content="article">
 <meta property="og:title" content="打造属于你的独立博客帝国">
 <meta property="og:url" content="http://yoursite.com/2016/01/03/build-up-blog/index.html">
 <meta property="og:site_name" content="赖皮小新">
-<meta property="og:image" content="http://yoursite.com/assets/Img/自然风光.png">
-<meta property="og:updated_time" content="2017-02-15T13:11:02.000Z">
+<meta property="og:description" content="前置条件
+
+有时间和耐心折腾
+一定的学习能力和专研精神">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/head.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/no-ssh.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/ssh-generate-path.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/ssh-generate-password.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/ssh-generated.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/ssh-test.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/github-new-repository.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/create-github-pages.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/domain-name1.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/domain-name2.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/domain-name3.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/domain-name4.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/godaddy-login.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/domain-name5.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/build-up-blog/dns-config.png">
+<meta property="og:updated_time" content="2016-05-22T03:36:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打造属于你的独立博客帝国">
-<meta name="twitter:image" content="http://yoursite.com/assets/Img/自然风光.png">
+<meta name="twitter:description" content="前置条件
+
+有时间和耐心折腾
+一定的学习能力和专研精神">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/build-up-blog/head.png">
   
   
   <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
@@ -64,8 +90,499 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/assets/Img/自然风光.png" alt="head"></p>
+        <h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a><strong>前置条件</strong></h3><blockquote>
+<ul>
+<li>有时间和<strong>耐心</strong>折腾</li>
+<li>一定的<strong>学习能力</strong>和<strong>专研精神</strong></li>
+</ul>
+</blockquote>
 <a id="more"></a>
+<p><img src="/assets/blogImg/build-up-blog/head.png" alt="head"></p>
+<h2 id="我是大纲："><a href="#我是大纲：" class="headerlink" title="我是大纲："></a><strong>我是大纲：</strong></h2><ol>
+<li>为什么是Github Pages</li>
+<li>配置本地环境<ul>
+<li>2.1 安装Node.js </li>
+<li>2.2 安装Git  </li>
+</ul>
+</li>
+<li>搭建Github Pages<ul>
+<li>3.1 注册Github</li>
+<li>3.2 配置SSH keys</li>
+<li>3.3 添加SSH keys到Github</li>
+<li>3.4 创建Github Pages </li>
+</ul>
+</li>
+<li>Hexo<ul>
+<li>4.1 Hexo安装</li>
+<li>4.2 Hexo部署</li>
+<li>4.3 Hexo常用命令</li>
+<li>4.4 Hexo基本配置</li>
+</ul>
+</li>
+<li>独立域名与GitHub Pages的空间的绑定<ul>
+<li>5.1 购买域名</li>
+<li>5.2 设置GitHub Pages</li>
+<li>5.3 DNS设置</li>
+</ul>
+</li>
+<li>Hexo写作<ul>
+<li>6.1 布局</li>
+<li>6.2 文件名称</li>
+<li>6.3 草稿</li>
+<li>6.4 模版</li>
+</ul>
+</li>
+</ol>
+<p><code>说明:以下所有命令行命令，Windows请在Git安装完后的Git Bash中执行，Mac在终端工具里即可。</code> `</p>
+<h3 id="一、为什么是Github-Pages"><a href="#一、为什么是Github-Pages" class="headerlink" title="一、为什么是Github Pages"></a><strong>一、为什么是Github Pages</strong></h3><blockquote>
+<ul>
+<li>拥有免费300M空间,自主管理,<strong>安全可靠</strong>；</li>
+<li>可以从Github上面得到大牛分享的自定义Hexo主题,还可以开阔的眼界；</li>
+<li>学会使用Github可以帮助你适应团队协作，升职加薪指日可待；</li>
+<li>可以很方便地转移博客到gitcafe(防止被GFW墙了)；</li>
+<li>装逼利器，把妹神器。</li>
+</ul>
+</blockquote>
+<h3 id="二、配置本地环境"><a href="#二、配置本地环境" class="headerlink" title="二、配置本地环境"></a><strong>二、配置本地环境</strong></h3><h4 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a><strong>2.1 安装Node.js</strong></h4><p>安装 Node.js 的最佳方式是使用 nvm。</p>
+<p>cURL:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure></p>
+<p>Wget:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure></p>
+<p>安装完成后，重启终端并执行下列命令即可安装 Node.js。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install 4</div></pre></td></tr></table></figure>
+<p>或者您也可以下载 <a href="https://nodejs.org/en/" target="_blank" rel="external">安装程序</a> 来安装。</p>
+<h4 id="2-2-安装Git"><a href="#2-2-安装Git" class="headerlink" title="2.2 安装Git"></a><strong>2.2 安装Git</strong></h4><p>(windows系统)</p>
+<blockquote>
+<p>参考教程: <a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">教程地址</a></p>
+</blockquote>
+<p>(Mac OS系统)</p>
+<p>打开终端窗口, 依次粘贴以下脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install git</div></pre></td></tr></table></figure>
+<h3 id="三、搭建Github-Pages"><a href="#三、搭建Github-Pages" class="headerlink" title="三、搭建Github Pages"></a><strong>三、搭建Github Pages</strong></h3><h4 id="3-1-注册Github帐号"><a href="#3-1-注册Github帐号" class="headerlink" title="3.1 注册Github帐号"></a>3.1 注册<a href="https://github.com" target="_blank" rel="external">Github</a>帐号</h4><blockquote>
+<p>参考教程: <a href="http://jingyan.baidu.com/article/455a9950abe0ada167277864.html" target="_blank" rel="external">教程地址</a></p>
+</blockquote>
+<h4 id="3-2-配置SSH-keys"><a href="#3-2-配置SSH-keys" class="headerlink" title="3.2 配置SSH keys"></a><strong>3.2 配置SSH keys</strong></h4><ul>
+<li>检查SSH keys的设置:</li>
+</ul>
+<blockquote>
+<ul>
+<li>首先我们需要检查你电脑上现有的ssh key：</li>
+<li>在命令行工具中输入&#160;&#160;&#160;&#160;<strong>$ cd ~/. ssh</strong>&#160;&#160;&#160;&#160;检查本机的ssh密钥</li>
+<li>如果提示&#160;&#160;&#160;&#160;<strong>No such file or directory</strong>&#160;&#160;&#160;&#160; 说明你是第一次使用git。<br><img src="/assets/blogImg/build-up-blog/no-ssh.png" alt="no-ssh"></li>
+</ul>
+</blockquote>
+<ul>
+<li>生成新的SSH Key:</li>
+</ul>
+<blockquote>
+<ul>
+<li>在命令行工具中输入：</li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>看到出现&#160;&#160;&#160;&#160;<strong>Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):</strong>&#160;&#160;&#160;&#160;(此时按下回车就好)<br><img src="/assets/blogImg/build-up-blog/ssh-generate-path.png" alt="ssh-generate-path"></li>
+<li>看到出现输入密码，连续两次回车就好<br><img src="/assets/blogImg/build-up-blog/ssh-generate-password.png" alt="ssh-generate-password"><br>出现以下界面，就代表你已经成功设置并生成SSH Key啦：<br><img src="/assets/blogImg/build-up-blog/ssh-generated.png" alt="ssh-generated"></li>
+</ul>
+</blockquote>
+<h4 id="3-3-添加SSH-keys到Github"><a href="#3-3-添加SSH-keys到Github" class="headerlink" title="3.3 添加SSH keys到Github:"></a><strong>3.3 添加SSH keys到Github:</strong></h4><ul>
+<li><p>打开 ~/.ssh/id_rsa.pub文件(<strong>.ssh文件一般为隐藏文件夹</strong>)，复制其中所有的内容。然后把它粘贴到github的ssh key添加的表单中。</p>
+</li>
+<li><p>执行以下命令来测试key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果你看到：</p>
+<blockquote>
+<p>The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.<br>Are you sure you want to continue connecting (yes/no)?</p>
+<ul>
+<li>输入“yes”并回车。</li>
+</ul>
+</blockquote>
+<p>当你看到以下内容时， 你就添加成功了:<br>Hi username! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<p><img src="/assets/blogImg/build-up-blog/ssh-test.png" alt="ssh-test"></p>
+<p><strong>设置用户信息</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"libingfeng007"</span>//用户名</div><div class="line">$ git config --global user.email  <span class="string">"libingfeng007@gmail.com"</span>//填写自己的邮箱</div></pre></td></tr></table></figure></p>
+<ul>
+<li>至此,SSH Keys 配置完成</li>
+</ul>
+<h4 id="3-4-创建Github-Pages"><a href="#3-4-创建Github-Pages" class="headerlink" title="3.4 创建Github Pages"></a><strong>3.4 创建Github Pages</strong></h4><p>在<a href="https://github.com" target="_blank" rel="external">github</a>首页，点击页面右下角「New Repository」<br><img src="/assets/blogImg/build-up-blog/github-new-repository.png" alt="github-new-repository"><br>填写项目信息：</p>
+<p><img src="/assets/blogImg/build-up-blog/create-github-pages.png" alt="create-github-pages"></p>
+<h3 id="四、Hexo"><a href="#四、Hexo" class="headerlink" title="四、Hexo"></a><strong>四、Hexo</strong></h3><h3 id="4-1-Hexo安装"><a href="#4-1-Hexo安装" class="headerlink" title="4.1 Hexo安装"></a><strong>4.1 Hexo安装</strong></h3><p>当Node.js和Git安装完成后，即可使用 npm 安装 Hexo，在命令行工具中输入以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<h4 id="4-2-Hexo部署"><a href="#4-2-Hexo部署" class="headerlink" title="4.2 Hexo部署"></a><strong>4.2 Hexo部署</strong></h4><ul>
+<li><p>在电脑上新建一个存储Hexo文件的文件夹，通过命令行工具执行以下命令，进入指定目录文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span>  [folder]</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过命令行工具执行以下命令，为当前指定文件夹生成建站所需文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><code>如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站</code></p>
+</blockquote>
+<ul>
+<li>在当前Hexo文件夹下，在命令行工具执行以下命令，生成静态文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d</td>
+<td style="text-align:center">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td>-w</td>
+<td style="text-align:center">监视文件变动</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>启动服务器。默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-p</td>
+<td style="text-align:center">重设端口 (端口被占用的时候可以使用,例：hexo s -p 5000)</td>
+</tr>
+<tr>
+<td>-s</td>
+<td style="text-align:center">只使用静态文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td style="text-align:center">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️注意：在执行 hexo deploy 后,出现 error deployer not found:github 的错误，请在命令行工具执行以下命令；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>⚠️注意：当端口因为被占用而无法使用的时候，<br>法一，通过<code>hexo s -p 新端口</code> 来设置新的端口运行。<br>法二，通过杀进程方式释放进程来使用该端口：<br>1.查询被占用端口的PID值：</p>
+<blockquote>
+<p>sudo lsof -i :端口号</p>
+</blockquote>
+<p>2.杀死占用端口的进程</p>
+<blockquote>
+<p>sudo kill -9 端口号</p>
+</blockquote>
+<hr>
+<ul>
+<li>部署网站到绑定到github仓库中</li>
+</ul>
+<p>首先进入Hexo目录下，打开_config.yml文件，找到下面的内容</p>
+<blockquote>
+<p># Deployment<br>## Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>  type:</p>
+</blockquote>
+<p>然后将它们修改为</p>
+<blockquote>
+<p># Deployment<br>## Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>  type: git<br>  repository: git@github.com:libingfeng007/libingfeng007.github.io.git<br>  branch: master</p>
+</blockquote>
+<p>⚠️注意：<br>Repository：必须是SSH形式的url（git@github.com:libingfeng007/libingfeng007.github.io.git），而不能是HTTPS形式的url（<a href="https://github.com/libingfeng007/libingfeng007.github.io.git），否则会出现错误：" target="_blank" rel="external">https://github.com/libingfeng007/libingfeng007.github.io.git），否则会出现错误：</a></p>
+<blockquote>
+<p>$ hexo deploy<br>[info] Start deploying: github<br>[error] <a href="https://github.com/libingfeng007/libingfeng007.github.io" target="_blank" rel="external">https://github.com/libingfeng007/libingfeng007.github.io</a> is not a valid repositor URL!</p>
+</blockquote>
+<p>使用SSH url，如果电脑没有开放SSH 端口，会致部署失败。</p>
+<blockquote>
+<p>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights<br>and the repository exists.</p>
+</blockquote>
+<p><strong>如果部署到Github Pages上到博客发现没有发生更改，可以考虑使用<code>Hexo clean</code>清除隐藏的文件夹.deploy里面的缓存发布文件,再执行<code>hexo d -g</code>部署Hexo</strong></p>
+<p><strong>部署命令为:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-g</td>
+<td style="text-align:center">部署之前预先生成静态文件</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️关于找不到git部署</p>
+<blockquote>
+<p>ERROR Deployer not found: git</p>
+</blockquote>
+<p>解决方法：<br>在命令行工具执行以下命令再部署</p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<h4 id="4-3-Hexo常用命令"><a href="#4-3-Hexo常用命令" class="headerlink" title="4.3 Hexo常用命令"></a><strong>4.3 Hexo常用命令</strong></h4><table>
+<thead>
+<tr>
+<th><strong>命令</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo new “postName”</td>
+<td style="text-align:center">新建文章</td>
+</tr>
+<tr>
+<td>hexo new page “pageName”</td>
+<td style="text-align:center">新建页面</td>
+</tr>
+<tr>
+<td>hexo g</td>
+<td style="text-align:center">生成静态页面至public目录</td>
+</tr>
+<tr>
+<td>hexo s</td>
+<td style="text-align:center">开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td style="text-align:center">将.deploy目录部署到GitHub</td>
+</tr>
+<tr>
+<td>hexo clean</td>
+<td style="text-align:center">清除在隐藏的文件夹.deploy里面的缓存发布文件</td>
+</tr>
+<tr>
+<td>hexo h</td>
+<td style="text-align:center">查看帮助</td>
+</tr>
+<tr>
+<td>hexo v</td>
+<td style="text-align:center">查看Hexo的版本</td>
+</tr>
+<tr>
+<td>hexo d -g</td>
+<td style="text-align:center">生成加部署</td>
+</tr>
+<tr>
+<td>hexo s -g</td>
+<td style="text-align:center">生成加预览</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-4-Hexo基本配置"><a href="#4-4-Hexo基本配置" class="headerlink" title="4.4 Hexo基本配置"></a><strong>4.4 Hexo基本配置</strong></h4><p>你可以在 _config.yml 中修改大部份的配置。</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th style="text-align:center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td style="text-align:center">网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td style="text-align:center">网站副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td style="text-align:center">网站描述</td>
+</tr>
+<tr>
+<td>author</td>
+<td style="text-align:center">您的名字</td>
+</tr>
+<tr>
+<td>language</td>
+<td style="text-align:center">网站使用的语言</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td style="text-align:center">网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UT</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>设置RSS功能</li>
+</ul>
+<ol>
+<li>安装RSS插件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+<ol>
+<li>开启RSS功能</li>
+</ol>
+<p>编辑hexo/_config.yml，添加如下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rss: /atom.xml <span class="comment">#rss地址  默认即可</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>设置404页面</li>
+</ul>
+<ol>
+<li>在Hexo/source目录下新建404.html文件</li>
+<li>404.html的内容可以设置为下面的内容(以企鹅的公益404为例):</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: default</div><div class="line">---</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">         &lt;meta charset=<span class="string">"UTF-8"</span> /&gt;</div><div class="line">         &lt;title&gt;404&lt;/title&gt;                                                                                                                                        </div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">         &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://www.qq.com/404/search_children.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>如需要进一步的配置请<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">点击这里</a>;</p>
+<h3 id="五、独立域名与GitHub-Pages的空间的绑定"><a href="#五、独立域名与GitHub-Pages的空间的绑定" class="headerlink" title="五、独立域名与GitHub Pages的空间的绑定"></a><strong>五、独立域名与GitHub Pages的空间的绑定</strong></h3><h4 id="5-1-购买域名"><a href="#5-1-购买域名" class="headerlink" title="5.1 购买域名"></a><strong>5.1 购买域名</strong></h4><p>&#160;&#160;&#160;&#160;推荐到<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">godaddy</a>购买，不为别的，<strong>安全</strong>，而且可以用支付宝支付～</p>
+<blockquote>
+<ul>
+<li>查询你想要的域名：</li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/domain-name1.png" alt="search-for-domain"></p>
+<blockquote>
+<ul>
+<li>找到想购买的域名时,选择「进入购物车」</li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/domain-name2.png" alt="domain-to-cart"></p>
+<blockquote>
+<ul>
+<li>godaddy附加收费服务，不要管，向下滚动，继续「进入购物车」； </li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/domain-name3.png" alt="continue-to-cart"></p>
+<blockquote>
+<ul>
+<li>确认购买。修改购买年限，默认是两年，可以修改成1/2/3/5/10年，随自己喜欢。（如果你不是土豪，可以上网搜godaddy的优惠码，一大堆）</li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/domain-name4.png" alt="pay-for-domain"></p>
+<blockquote>
+<ul>
+<li>新页面要求登陆，如果没有帐号就需要注册一下，有帐号的话直接登陆就可以了（<a href="http://www.admin5.com/article/20131014/527495.shtml" target="_blank" rel="external">注册教程</a>)</li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/godaddy-login.png" alt="godaddy-login"></p>
+<blockquote>
+<ul>
+<li>检查。结算后，重新登录，去「我的账户」，域名已经显示在你的账户了</li>
+</ul>
+</blockquote>
+<p><img src="/assets/blogImg/build-up-blog/domain-name5.png" alt="look-for-domain"></p>
+<p>⚠️注意事项：</p>
+<ul>
+<li><strong>输入优惠码没有优惠或者优惠幅度较低，请清除浏览器cookies再尝试</strong>；</li>
+<li><strong>如果没有支付宝支付选项，有可能是使用的优惠码不支持支付宝，请重新清除浏览器cookies再尝试</strong>；</li>
+<li><strong>注册时用户填写信息时一定要输入正确的邮箱名字，否则修改十分麻烦</strong>；</li>
+<li><strong>买完域名之后一定要记得去自己的邮箱查看激活邮件，否则域名激活不了</strong>。</li>
+</ul>
+<h4 id="5-2-设置GitHub-Pages"><a href="#5-2-设置GitHub-Pages" class="headerlink" title="5.2 设置GitHub Pages"></a><strong>5.2 设置GitHub Pages</strong></h4><p>在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如libingfeng07.com</p>
+<blockquote>
+<p>若不知道怎么新建，我提供了个空的CNAME文本文件下载地址，请自行下载：<br><a href="http://pan.baidu.com/s/1pKneAMJ" target="_blank" rel="external">下载地址</a>&#160;&#160;&#160;&#160;提取密码：<strong>jd2f</strong></p>
+</blockquote>
+<p>用记事本打开CNAME，里面写入你要绑定的域名，比如libingfeng07.com，放进Hexo\source目录下，在命令行工具中,用hexo d 命令提交到Github上去。</p>
+<h4 id="5-3-DNS设置"><a href="#5-3-DNS设置" class="headerlink" title="5.3 DNS设置"></a><strong>5.3 DNS设置</strong></h4><blockquote>
+<ul>
+<li>注册<a href="https://www.dnspod.cn" target="_blank" rel="external">DNSpod</a>，添加域名，如下图设置:<br>其中A的两条记录指向的ip地址是github Pages的提供的ip<br>192.30.252.153<br>192.30.252.154<br>如博客不能登录，有可能是github更改了空间服务的ip地址，记得及时到在<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="external">GitHub Pages</a>查看最新的ip即可<br>www指定的记录是你在github注册的仓库。</li>
+<li>去Godaddy修改DNS地址<br>更改godaddy的Nameservers为DNSpod的NameServers。</li>
+</ul>
+</blockquote>
+<p>具体操作流程如下图:<br><img src="/assets/blogImg/build-up-blog/dns-config.png" alt="dns-config"></p>
+<h3 id="六、Hexo写作"><a href="#六、Hexo写作" class="headerlink" title="六、Hexo写作"></a><strong>六、Hexo写作</strong></h3><ul>
+<li>你可以在命令行工具中执行下列命令来创建一篇新文章，在命令中指定文章的布局（layout），默认为 post，可以通过修改 _config.yml 中的 default_layout 参数来指定默认布局。如果标题包含空格的话，请使用引号括起来。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] &lt; title &gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="6-1-布局"><a href="#6-1-布局" class="headerlink" title="6.1 布局"></a><strong>6.1 布局</strong></h4><ul>
+<li>Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而您自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>布局</th>
+<th style="text-align:center">路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>post</td>
+<td style="text-align:center">source/_posts</td>
+</tr>
+<tr>
+<td>page</td>
+<td style="text-align:center">source</td>
+</tr>
+<tr>
+<td>draft</td>
+<td style="text-align:center">source/_drafts</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️注：如果你不想你的文章被处理，你可以将 Front-Matter 中的<code>layout:</code> 设为 <code>false</code> 。</p>
+<h4 id="6-2-文件名称"><a href="#6-2-文件名称" class="headerlink" title="6.2 文件名称"></a><strong>6.2 文件名称</strong></h4><ul>
+<li>Hexo 默认以标题做为文件名称，但您可编辑 new_post_name 参数来改变默认的文件名称，举例来说，设为 :year-:month-:day-:title.md 可让您更方便的通过日期来管理文章。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:title</td>
+<td style="text-align:center">标题（小写，空格将会被替换为短杠）</td>
+</tr>
+<tr>
+<td>:year</td>
+<td style="text-align:center">建立的年份，比如， 2015</td>
+</tr>
+<tr>
+<td>:month</td>
+<td style="text-align:center">建立的月份（有前导零），比如， 04</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td style="text-align:center">建立的月份（无前导零），比如， 4</td>
+</tr>
+<tr>
+<td>:day</td>
+<td style="text-align:center">建立的日期（有前导零），比如， 07</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td style="text-align:center">建立的日期（无前导零），比如， 7</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6-3-草稿"><a href="#6-3-草稿" class="headerlink" title="6.3 草稿"></a><strong>6.3 草稿</strong></h4><ul>
+<li>刚刚提到了 Hexo 的一种特殊布局：draft，这种布局在建立时会被保存到 source/_drafts 文件夹，您可通过 publish 命令将草稿移动到 source/_posts 文件夹，该命令的使用方式与 new 十分类似，您也可在命令中指定 layout 来指定布局。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo publish [layout] &lt; title &gt;</div></pre></td></tr></table></figure>
+<p>草稿默认不会显示在页面中，您可在执行时加上 –draft 参数，或是把 render_drafts 参数设为 true 来预览草稿。</p>
+<h4 id="6-4-模版"><a href="#6-4-模版" class="headerlink" title="6.4 模版"></a><strong>6.4 模版</strong></h4><ul>
+<li>在新建文章时，Hexo 会根据 scaffolds 文件夹内相对应的文件来建立文件，例如：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new photo <span class="string">"My Gallery"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在执行这行指令时，Hexo 会尝试在 scaffolds 文件夹中寻找 photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layout</td>
+<td style="text-align:center">布局</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td style="text-align:center">文件建立日期</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#160;&#160;&#160;&#160;至此，你可以用所绑定到独立域名直接访问你的独立博客啦，赶快去写你的第一篇”Hello World”吧，如果还有什么不懂的地方，可以底下留言告知。</p>
+</blockquote>
 
       
     </div>
@@ -80,6 +597,23 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/01/04/markdown-grammer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          十分钟上手Markdown
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/01/hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
   
 </article>
 
